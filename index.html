@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flatdango</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" href="/images/logo.jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="slider-container">
+        <div class="slider"></div>
+        <div class="header-fade"></div>
+        <div class="slider-fade-left"></div>
+        <div class="slider-fade-right"></div>
+    </div>
+    <header>
+        <div class="logo-container">
+            <img src="/assets/images/background image.jpeg" alt="Flatdango Logo" class="logo">
+        </div>
+        <h1>FLATDANGO CINEMA</h1>
+        <h2>Get Your Tickets</h2>
+    </header>
+    <div class="container">
+        <aside>
+            <h2>Movies Available</h2>
+            <ul id="films" class="film-list"></ul>
+        </aside>
+        <main>
+            <div id="movie-details" class="movie-details">
+                <img id="poster" src="/assets/images/sample image.jpeg" alt="Movie Poster">
+                <div class="movie-info">
+                    <h2 id="title"></h2>
+                    <p id="description"></p>
+                    <p>Runtime: <span id="runtime"></span> mins</p>
+                    <p>Showtime: <span id="showtime"></span></p>
+                    <p>Available Tickets: <span id="available-tickets"></span></p>
+                    <button id="buy-ticket" class="btn">Buy Ticket</button>
+                    <button id="watch-trailer" class="btn">Watch Trailer</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal Structure -->
+    <div id="trailerModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <iframe id="trailer" width="100%" height="100%" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

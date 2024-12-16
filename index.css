@@ -1,0 +1,281 @@
+/* index.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Lobster&display=swap'); /* Added Lobster font */
+
+body {
+    font-family:fantasy;
+    background-color: #000000d3; /* Blackish background color */
+    margin: 0;
+    padding: 0;
+    color: #e0e0e0; /* Light gray text color */
+    position: relative;
+    overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+.slider-container {
+    position: relative;
+    width: 100%;
+    height: 350px; /* Increase height to touch the container below */
+    overflow: hidden;
+}
+
+.slider {
+    display: flex;
+    width: 200%; /* Double the width to accommodate seamless looping */
+    height: 100%;
+    animation: slide 20s linear infinite;
+    position: relative;
+}
+
+.slider img {
+    width: 100%; /* Ensure each image takes up full width of the container */
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(50%); /* Slightly darken the images */
+}
+
+.header-fade {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(18, 18, 18, 0.7), rgba(18, 18, 18, 0)); /* Fade effect at the bottom */
+     z-index: 2; /* Place above slider images */
+}
+
+.slider-fade-left,
+.slider-fade-right {
+    position: absolute;
+    top: 0;
+    width: 200px; /* Width of the fade */
+    height: 100%;
+    z-index: 3; /* Place above slider images */
+}
+
+.slider-fade-left {
+    left: 0;
+    background: linear-gradient(to right, rgba(18, 18, 18, 1), rgba(18, 18, 18, 0)); /* Fade effect at the left edge */
+}
+
+.slider-fade-right {
+    right: 0;
+    background: linear-gradient(to left, rgba(18, 18, 18, 1), rgba(18, 18, 18, 0)); /* Fade effect at the right edge */
+}
+
+header {
+    background-color: transparent; /* Make the header background transparent */
+    color: #ff9800; /* Amber text color */
+    padding: 1rem 2rem;
+    text-align: center;
+    box-shadow: none;
+    position: absolute; /* Position above the slider */
+    top: 0;
+    width: 100%; /* Full width */
+    z-index: 4; /* Place above fading effect */
+}
+
+header .logo-container {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+header .logo {
+    height: 120px; /* Increased size of the logo */
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5)); /* Add a shadow for blending effect */
+    transition: transform 0.3s ease-in-out;
+}
+
+header .logo:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover for effect */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 3rem;
+    font-family: 'Lobster', cursive; /* Change the font to Lobster */
+    color: #ff9800; /* Amber text color */
+}
+
+header h2 {
+    font-family: 'Roboto', sans-serif;
+    color: #e0e0e0; /* Light gray text color */
+    margin-top: 0.5rem;
+}
+
+.container {
+    display: flex;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    z-index: 1;
+}
+
+aside {
+    flex: 1;
+    background-color: rgba(255, 255, 255, 0.15); /* Transparent white background */
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-right: 1rem;
+    overflow-y: auto;
+    max-height: 80vh; /* Ensure the sidebar fits within the viewport */
+}
+
+aside h2 {
+    text-align: center;
+    color: #ff9800; /* Amber text color */
+    margin-bottom: 1rem;
+}
+
+.film-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.film-list li {
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    display: flex;
+    align-items: center;
+    color: #e0e0e0; /* Light gray text color */
+}
+
+.film-list li img {
+    height: 50px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.film-list li:hover {
+    background-color: #ff5722; /* Deep orange hover color */
+    color: #ffffff; /* White text color on hover */
+}
+
+main {
+    flex: 3;
+}
+
+.movie-details {
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.15); /* Transparent white background */
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s;
+}
+
+.movie-details img {
+    width: 300px;
+    border-radius: 10px;
+    margin-right: 2rem;
+}
+
+.movie-info {
+    text-align: left;
+}
+
+.movie-info h2 {
+    margin-top: 1rem;
+    font-size: 2rem;
+    color: #ff9800; /* Amber text color */
+}
+
+.movie-info p {
+    margin: 0.5rem 0;
+}
+
+.btn {
+    background-color: #ff9800; /* Amber button color */
+    color: #ffffff; /* White text color */
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 1rem;
+}
+
+.btn:hover {
+    background-color: #f57c00; /* Darker amber on hover */
+}
+
+.btn.sold-out {
+    background-color: #b71c1c; /* Dark red for sold out */
+    color: #ffffff; /* White text color */
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: not-allowed;
+    transition: background-color 0.3s;
+}
+
+@keyframes slide {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+    position: relative;
+    margin: auto;
+    padding: 0;
+    width: 80%;
+    height: 80%;
+    background-color: black;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content iframe {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: #aaa;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
